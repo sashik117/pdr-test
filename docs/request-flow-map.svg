@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1360" viewBox="0 0 1800 1360">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 18px Arial, sans-serif; fill: #475569; }
+      .laneTitle { font: 700 24px Arial, sans-serif; fill: #0f172a; }
+      .box { fill: #ffffff; stroke: #94a3b8; stroke-width: 2; rx: 16; }
+      .ui { fill: #dbeafe; stroke: #60a5fa; }
+      .api { fill: #dcfce7; stroke: #4ade80; }
+      .service { fill: #fef3c7; stroke: #f59e0b; }
+      .db { fill: #fce7f3; stroke: #f472b6; }
+      .label { font: 700 20px Arial, sans-serif; fill: #0f172a; }
+      .small { font: 500 15px Arial, sans-serif; fill: #334155; }
+      .mono { font: 600 14px 'Courier New', monospace; fill: #0f172a; }
+      .arrow { stroke: #64748b; stroke-width: 3; fill: none; marker-end: url(#m); }
+      .return { stroke: #0ea5e9; stroke-width: 2.5; fill: none; marker-end: url(#m2); stroke-dasharray: 8 6; }
+      .sep { stroke: #cbd5e1; stroke-width: 2; }
+    </style>
+    <marker id="m" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#64748b"/>
+    </marker>
+    <marker id="m2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1800" height="1360"/>
+  <text class="title" x="60" y="60">What really happens after a click</text>
+  <text class="subtitle" x="60" y="95">Three real flows from this codebase: login, save question, and finish test.</text>
+
+  <text class="laneTitle" x="60" y="165">1) User logs in</text>
+  <rect class="box ui" x="60" y="200" width="300" height="110" rx="18"/>
+  <text class="label" x="90" y="242">Frontend page</text>
+  <text class="mono" x="90" y="270">app/(auth)/login/page.tsx</text>
+  <text class="small" x="90" y="295">User enters email + password</text>
+
+  <rect class="box ui" x="430" y="200" width="300" height="110" rx="18"/>
+  <text class="label" x="460" y="242">Frontend API helper</text>
+  <text class="mono" x="460" y="270">lib/api.ts - authApi.login()</text>
+  <text class="small" x="460" y="295">POST /auth/login</text>
+
+  <rect class="box api" x="800" y="200" width="300" height="110" rx="18"/>
+  <text class="label" x="830" y="242">Backend route</text>
+  <text class="mono" x="830" y="270">api/auth/login.post.ts</text>
+  <text class="small" x="830" y="295">Validate body with zod</text>
+
+  <rect class="box service" x="1170" y="200" width="300" height="110" rx="18"/>
+  <text class="label" x="1200" y="242">Service logic</text>
+  <text class="mono" x="1200" y="270">services/auth.service.ts</text>
+  <text class="small" x="1200" y="295">Check password, create JWT</text>
+
+  <rect class="box db" x="1540" y="200" width="220" height="110" rx="18"/>
+  <text class="label" x="1570" y="242">MongoDB</text>
+  <text class="mono" x="1570" y="270">users</text>
+  <text class="small" x="1570" y="295">Find this email</text>
+
+  <line class="arrow" x1="360" y1="255" x2="430" y2="255"/>
+  <line class="arrow" x1="730" y1="255" x2="800" y2="255"/>
+  <line class="arrow" x1="1100" y1="255" x2="1170" y2="255"/>
+  <line class="arrow" x1="1470" y1="255" x2="1540" y2="255"/>
+  <path class="return" d="M1650 320 C1650 360, 570 360, 570 320"/>
+  <text class="small" x="760" y="388">Back comes token + user. Then auth.ts (zustand store) keeps user/token in localStorage.</text>
+
+  <line class="sep" x1="60" y1="450" x2="1740" y2="450"/>
+
+  <text class="laneTitle" x="60" y="520">2) User clicks the bookmark on a question</text>
+  <rect class="box ui" x="60" y="555" width="300" height="110" rx="18"/>
+  <text class="label" x="90" y="597">UI button</text>
+  <text class="mono" x="90" y="625">components/test/QuestionCard.tsx</text>
+  <text class="small" x="90" y="650">handleBookmark()</text>
+
+  <rect class="box ui" x="430" y="555" width="300" height="110" rx="18"/>
+  <text class="label" x="460" y="597">Frontend API helper</text>
+  <text class="mono" x="460" y="625">savedQuestionsApi.save(questionId)</text>
+  <text class="small" x="460" y="650">lib/api.ts</text>
+
+  <rect class="box api" x="800" y="555" width="300" height="110" rx="18"/>
+  <text class="label" x="830" y="597">Backend route</text>
+  <text class="mono" x="830" y="625">api/questions/saved/index.post.ts</text>
+  <text class="small" x="830" y="650">Reads body.questionId</text>
+
+  <rect class="box service" x="1170" y="555" width="300" height="110" rx="18"/>
+  <text class="label" x="1200" y="597">Service logic</text>
+  <text class="mono" x="1200" y="625">questionsService.saveQuestion()</text>
+  <text class="small" x="1200" y="650">Avoid duplicate save</text>
+
+  <rect class="box db" x="1540" y="555" width="220" height="110" rx="18"/>
+  <text class="label" x="1570" y="597">MongoDB</text>
+  <text class="mono" x="1570" y="625">user_saved_question</text>
+  <text class="small" x="1570" y="650">Insert { userId, questionId }</text>
+
+  <line class="arrow" x1="360" y1="610" x2="430" y2="610"/>
+  <line class="arrow" x1="730" y1="610" x2="800" y2="610"/>
+  <line class="arrow" x1="1100" y1="610" x2="1170" y2="610"/>
+  <line class="arrow" x1="1470" y1="610" x2="1540" y2="610"/>
+  <path class="return" d="M1650 675 C1650 720, 220 720, 220 675"/>
+  <text class="small" x="730" y="748">Frontend gets success response and can redraw the bookmark as saved.</text>
+
+  <line class="sep" x1="60" y1="810" x2="1740" y2="810"/>
+
+  <text class="laneTitle" x="60" y="880">3) User finishes a test</text>
+  <rect class="box ui" x="60" y="915" width="300" height="120" rx="18"/>
+  <text class="label" x="90" y="957">Frontend page</text>
+  <text class="mono" x="90" y="985">app/(main)/test/ticket/[ticketId]/page.tsx</text>
+  <text class="small" x="90" y="1010">handleSubmit() from Finish button</text>
+
+  <rect class="box ui" x="430" y="915" width="300" height="120" rx="18"/>
+  <text class="label" x="460" y="957">Frontend API helper</text>
+  <text class="mono" x="460" y="985">testsApi.submit({ questions, answers })</text>
+  <text class="small" x="460" y="1010">lib/api.ts</text>
+
+  <rect class="box api" x="800" y="915" width="300" height="120" rx="18"/>
+  <text class="label" x="830" y="957">Backend route</text>
+  <text class="mono" x="830" y="985">api/tests/submit.post.ts</text>
+  <text class="small" x="830" y="1010">Validate payload, require auth</text>
+
+  <rect class="box service" x="1170" y="915" width="300" height="120" rx="18"/>
+  <text class="label" x="1200" y="957">Service logic</text>
+  <text class="mono" x="1200" y="985">testsService.submitTest()</text>
+  <text class="small" x="1200" y="1010">Check answers, score, pass/fail</text>
+
+  <rect class="box db" x="1540" y="900" width="220" height="150" rx="18"/>
+  <text class="label" x="1570" y="942">MongoDB</text>
+  <text class="mono" x="1570" y="970">questions</text>
+  <text class="mono" x="1570" y="995">test_results</text>
+  <text class="mono" x="1570" y="1020">repetition data</text>
+
+  <line class="arrow" x1="360" y1="975" x2="430" y2="975"/>
+  <line class="arrow" x1="730" y1="975" x2="800" y2="975"/>
+  <line class="arrow" x1="1100" y1="975" x2="1170" y2="975"/>
+  <line class="arrow" x1="1470" y1="975" x2="1540" y2="975"/>
+  <path class="return" d="M1650 1060 C1650 1115, 570 1115, 570 1060"/>
+  <text class="small" x="625" y="1145">Response comes back with score, passed, correctAnswers, and answer-by-answer correctness. ResultModal shows it.</text>
+
+  <text class="subtitle" x="60" y="1285">Important: if MongoDB is down, the green and yellow boxes still exist in code, but real data cannot be loaded or saved.</text>
+</svg>

@@ -1,0 +1,38 @@
+{
+  "name": "pdr-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nitro dev --port 3001 --host 0.0.0.0",
+    "build": "nitro build",
+    "seed": "npx tsx scripts/seed-db.ts",
+    "create-admin": "npx tsx scripts/create-admin.ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "axios": "^1.13.4",
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
+    "nitropack": "^2.8.0",
+    "nodemailer": "^8.0.0",
+    "p-limit": "^7.3.0",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cheerio": "^0.22.35",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.0",
+    "@types/nodemailer": "^7.0.9",
+    "@types/supertest": "^6.0.3",
+    "dotenv": "^17.2.4",
+    "supertest": "^7.2.2",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0",
+    "vitest": "^4.0.18"
+  }
+}

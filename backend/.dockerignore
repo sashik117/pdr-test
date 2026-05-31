@@ -1,0 +1,6 @@
+node_modules
+.output
+.nitro
+*.log
+.env
+.env.local

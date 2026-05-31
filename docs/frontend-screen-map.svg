@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1120" viewBox="0 0 1700 1120">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 18px Arial, sans-serif; fill: #475569; }
+      .screen { fill: #ffffff; stroke: #cbd5e1; stroke-width: 3; rx: 24; }
+      .nav { fill: #eff6ff; stroke: #60a5fa; stroke-width: 2; rx: 16; }
+      .hero { fill: #dbeafe; stroke: #3b82f6; stroke-width: 2; rx: 16; }
+      .card { fill: #f8fafc; stroke: #94a3b8; stroke-width: 2; rx: 14; }
+      .file { fill: #ecfccb; stroke: #84cc16; stroke-width: 2; rx: 14; }
+      .accent { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; rx: 14; }
+      .label { font: 700 20px Arial, sans-serif; fill: #0f172a; }
+      .small { font: 500 15px Arial, sans-serif; fill: #334155; }
+      .mono { font: 600 14px 'Courier New', monospace; fill: #0f172a; }
+      .arrow { stroke: #64748b; stroke-width: 3; fill: none; marker-end: url(#m); }
+    </style>
+    <marker id="m" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1700" height="1120"/>
+  <text class="title" x="60" y="60">Frontend screen map</text>
+  <text class="subtitle" x="60" y="95">This is not a live screenshot. It is a labeled picture of the real files that paint the main UI.</text>
+
+  <rect class="screen" x="60" y="140" width="760" height="860" rx="26"/>
+  <text class="label" x="95" y="185">Main app screens</text>
+
+  <rect class="nav" x="95" y="220" width="690" height="85" rx="18"/>
+  <text class="label" x="120" y="255">Navbar</text>
+  <text class="small" x="120" y="282">Logo + menu: dashboard, theory, practice, tickets, questions, progress, history, pricing</text>
+
+  <rect class="hero" x="95" y="340" width="690" height="220" rx="18"/>
+  <text class="label" x="120" y="380">Home hero</text>
+  <text class="small" x="120" y="410">Big landing section with CTA button and product promise</text>
+  <rect class="accent" x="120" y="455" width="250" height="54" rx="14"/>
+  <text class="label" x="145" y="490" style="font-size:18px;">CTA button - Register</text>
+
+  <rect class="card" x="95" y="595" width="690" height="140" rx="18"/>
+  <text class="label" x="120" y="630">Content sections</text>
+  <text class="small" x="120" y="658">Advantages, modes, theory blocks, testimonials, pricing teasers</text>
+  <text class="small" x="120" y="685">Most of this lives directly in app/page.tsx</text>
+
+  <rect class="card" x="95" y="770" width="690" height="170" rx="18"/>
+  <text class="label" x="120" y="805">Footer</text>
+  <text class="small" x="120" y="833">Bottom navigation, links, branding, extra shortcuts</text>
+  <text class="small" x="120" y="860">Shown on public home and inside protected area too</text>
+
+  <rect class="screen" x="910" y="140" width="730" height="860" rx="26"/>
+  <text class="label" x="945" y="185">Test screen</text>
+
+  <rect class="accent" x="945" y="220" width="300" height="70" rx="18"/>
+  <text class="label" x="970" y="248">Header + timer</text>
+  <text class="small" x="970" y="274">Ticket number, question count, time left</text>
+
+  <rect class="card" x="945" y="320" width="660" height="90" rx="18"/>
+  <text class="label" x="970" y="355">Question navigator</text>
+  <text class="small" x="970" y="381">Small numbered boxes for jumping between questions</text>
+
+  <rect class="hero" x="945" y="445" width="660" height="335" rx="18"/>
+  <text class="label" x="970" y="480">Question card</text>
+  <text class="small" x="970" y="508">Ticket badge, question text, image, options, bookmark button, explanation block</text>
+  <circle cx="1550" cy="490" r="22" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+  <text class="small" x="1492" y="535">Bookmark button</text>
+
+  <rect class="card" x="945" y="815" width="660" height="90" rx="18"/>
+  <text class="label" x="970" y="850">Bottom controls</text>
+  <text class="small" x="970" y="876">Prev / Finish test / Next</text>
+
+  <rect class="card" x="945" y="930" width="660" height="60" rx="18"/>
+  <text class="small" x="970" y="968">After submit, ResultModal pops up with score, pass/fail, buttons.</text>
+
+  <rect class="file" x="310" y="40" width="350" height="70" rx="16"/>
+  <text class="mono" x="335" y="82">frontend/src/app/page.tsx</text>
+  <line class="arrow" x1="485" y1="110" x2="485" y2="340"/>
+
+  <rect class="file" x="40" y="315" width="320" height="70" rx="16"/>
+  <text class="mono" x="65" y="357">components/layout/Navbar.tsx</text>
+  <line class="arrow" x1="360" y1="350" x2="95" y2="262"/>
+
+  <rect class="file" x="40" y="835" width="320" height="70" rx="16"/>
+  <text class="mono" x="65" y="877">components/layout/Footer.tsx</text>
+  <line class="arrow" x1="360" y1="870" x2="95" y2="850"/>
+
+  <rect class="file" x="1180" y="40" width="390" height="70" rx="16"/>
+  <text class="mono" x="1205" y="82">app/(main)/test/ticket/[ticketId]/page.tsx</text>
+  <line class="arrow" x1="1375" y1="110" x2="1375" y2="220"/>
+
+  <rect class="file" x="1310" y="320" width="280" height="70" rx="16"/>
+  <text class="mono" x="1335" y="362">components/test/QuestionNav.tsx</text>
+  <line class="arrow" x1="1310" y1="355" x2="1245" y2="355"/>
+
+  <rect class="file" x="1310" y="565" width="280" height="70" rx="16"/>
+  <text class="mono" x="1335" y="607">components/test/QuestionCard.tsx</text>
+  <line class="arrow" x1="1310" y1="600" x2="1245" y2="600"/>
+
+  <rect class="file" x="1310" y="930" width="280" height="70" rx="16"/>
+  <text class="mono" x="1335" y="972">components/test/ResultModal.tsx</text>
+  <line class="arrow" x1="1310" y1="965" x2="1245" y2="965"/>
+</svg>

@@ -1,0 +1,20 @@
+{
+    "name": "pdr-parser",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "parse": "npx tsx parse-questions.ts",
+        "parse-theory": "npx tsx parse-theory.ts"
+    },
+    "dependencies": {
+        "axios": "^1.6.0",
+        "cheerio": "^1.0.0-rc.12",
+        "mongodb": "^7.1.0",
+        "p-limit": "^5.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "tsx": "^4.6.0",
+        "typescript": "^5.3.0"
+    }
+}
